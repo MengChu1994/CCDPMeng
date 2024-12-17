@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review for Meng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #000; /* Black background */
+      color: #ffd700; /* Gold text */
+    }
+    h1 {
+      color: #ffcc00; /* Bright gold for the title */
+    }
+    .button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      background-color: #333; /* Dark gray buttons */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #ffd700; /* Gold text for buttons */
+    }
+    .button:hover {
+      background-color: #555; /* Lighter gray on hover */
+    }
+    #generated-review {
+      margin: 20px;
+      font-size: 16px;
+      background-color: #222; /* Dark gray for review box */
+      padding: 20px;
+      border-radius: 10px;
+      color: #ffd700; /* Gold text for review */
+      box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5); /* Subtle gold glow */
+    }
+    .review-link {
+      display: block;
+      margin: 20px;
+      padding: 15px;
+      font-size: 18px;
+      color: #000; /* Black text */
+      background-color: #ffd700; /* Gold background */
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .review-link:hover {
+      background-color: #ffcc00; /* Brighter gold for hover */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Review for Meng</h1>
+
+  <!-- Button to Generate and Copy Review -->
+  <button class="button" onclick="generateAndCopy()">Generate & Copy Review</button>
+
+  <!-- Display Generated Review -->
+  <div id="generated-review">Your review will appear here!</div>
+
+  <!-- Yelp Link -->
+  <a href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?return_url=https%3A%2F%2Fm.yelp.com%2Fbiz%2Fchubby-cattle-bbq-rowland-heights-rowland-heights-2&review_origin=mobile-site-biz-details-action-button" class="review-link">Leave a Yelp Review</a>
+
+  <!-- Google Maps Link -->
+  <button class="review-link" onclick="window.location.href='googlemaps://?q=Chubby+Cattle+Rowland+Heights'">View on Google Maps</button>
+
+  <script>
+    // Updated review segments with more variety for Meng (male service reviews)
+    const serviceReviews = [
+      "Meng’s professionalism and kindness made us feel truly valued as guests.",
+      "Meng was attentive, polite, and ensured that every aspect of our dining experience was flawless.",
+      "The service provided by Meng was nothing short of excellent—friendly, efficient, and thoughtful.",
+      "Meng went above and beyond, checking in with us regularly and making sure everything was perfect.",
+      "We were impressed by Meng’s ability to balance attentiveness with giving us space to enjoy our meal.",
+      "Meng’s warm demeanor and quick responses to our requests stood out throughout the evening.",
+      "Meng's service was truly top-tier, with every interaction leaving us feeling well taken care of.",
+      "The way Meng handled our requests with a smile and efficiency was truly commendable.",
+      "Meng’s friendly attitude and excellent service made our dining experience unforgettable.",
+      "Every interaction with Meng was positive, and his attention to detail made the evening seamless."
+    ];
+
+    const foodReviews = [
+      "The premium Wagyu cuts were simply divine, with every bite showcasing perfect marbling and flavor.",
+      "We especially loved the A5 Wagyu, which was tender, flavorful, and a true highlight of the meal.",
+      "The variety of sushi and sashimi offered was both fresh and delicious, complementing the barbecue perfectly.",
+      "From perfectly grilled Wagyu to an array of appetizers, every dish was prepared to perfection.",
+      "The A5 Wagyu and the wide selection of side dishes were a match made in heaven.",
+      "The food quality was outstanding, especially the fresh sushi and melt-in-your-mouth Wagyu.",
+      "Every dish we tried was exceptional, with the premium Wagyu cuts being the star of the night.",
+      "The selection of meats, sushi, and appetizers provided an incredible dining experience.",
+      "The quality of the Wagyu beef was top-notch, and the fresh sashimi was a perfect addition.",
+      "The variety and freshness of the ingredients were evident in every dish we enjoyed."
+    ];
+
+    const drinkReviews = [
+      "The milk teas and slushies were a refreshing complement to the hearty meal.",
+      "We appreciated the wide range of drink options, from creamy milk teas to fizzy sodas.",
+      "The self-serve drink station was a fun touch, offering plenty of options for everyone.",
+      "The beverages were just as impressive as the food, especially the sweet and refreshing slushies.",
+      "From fruity slushies to rich milk teas, the drinks perfectly balanced the meal.",
+      "The drink bar was well-stocked, and the variety ensured that everyone found something they loved.",
+      "The milk teas were rich and flavorful, while the slushies provided a nice cool finish.",
+      "The drink station had something for everyone, from fizzy sodas to creamy teas.",
+      "Having such a wide range of drink options added an extra layer of enjoyment to our meal.",
+      "We especially enjoyed the icy slushies and the perfectly brewed milk teas."
+    ];
+
+    const environmentReviews = [
+      "The ambiance was lively yet cozy, with a modern design that felt both chic and welcoming.",
+      "The sleek decor and warm lighting created the perfect setting for an enjoyable evening.",
+      "The restaurant’s stylish interior made for a sophisticated yet comfortable atmosphere.",
+      "We loved the vibrant energy of the restaurant, which added to the overall experience.",
+      "The attention to detail in the decor and layout made the space feel inviting and upscale.",
+      "The environment was clean, modern, and perfectly suited for a memorable dining experience.",
+      "The blend of elegant design and cozy seating made us feel right at home.",
+      "The restaurant had a great vibe—stylish and lively but still comfortable and relaxed.",
+      "The polished and trendy decor elevated the overall dining experience.",
+      "The ambiance was just right, combining style with a welcoming and energetic atmosphere."
+    ];
+
+    // Function to generate and copy review
+    function generateAndCopy() {
+      const service = serviceReviews[Math.floor(Math.random() * serviceReviews.length)];
+      const food = foodReviews[Math.floor(Math.random() * foodReviews.length)];
+      const drink = drinkReviews[Math.floor(Math.random() * drinkReviews.length)];
+      const environment = environmentReviews[Math.floor(Math.random() * environmentReviews.length)];
+
+      const review = `${service} The food was outstanding. ${food} The drinks were just as impressive. ${drink} And finally, the ambiance was top-notch. ${environment}`;
+      const reviewElement = document.getElementById('generated-review');
+      reviewElement.innerText = review;
+
+      // Copy to clipboard
+      navigator.clipboard.writeText(review).then(() => {
+        alert("Review generated and copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+</html>
